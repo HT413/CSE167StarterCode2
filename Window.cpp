@@ -83,6 +83,9 @@ GLFWwindow* Window::create_window(int width, int height)
 
 void Window::resize_callback(GLFWwindow* window, int width, int height)
 {
+#ifdef __APPLE__
+	glfwGetFramebufferSize(window, &width, &height); // In case your Mac has a retina display
+#endif
 	Window::width = width;
 	Window::height = height;
 	// Set the viewport size. This is the only matrix that OpenGL maintains for us in modern OpenGL!
