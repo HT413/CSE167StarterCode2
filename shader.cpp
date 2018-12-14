@@ -33,8 +33,6 @@ GLuint LoadShaders(const char * vertex_file_path,const char * fragment_file_path
 	}else{
 		printf("Impossible to open %s. Check to make sure the file exists and you passed in the right filepath!\n", vertex_file_path);
 		printf("The current working directory is:");
-		// Please for the love of whatever deity/ies you believe in never do something like the next line of code,
-		// Especially on non-Windows systems where you can have the system happily execute "rm -rf ~"
 #ifdef _WIN32
 		system("CD");
 #else
